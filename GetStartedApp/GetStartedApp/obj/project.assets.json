@@ -1461,11 +1461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex Kinuthia\\Desktop\\practise\\GetStartedApp\\GetStartedApp\\GetStartedApp.csproj",
+      "projectUniqueName": "C:\\Users\\Alex Kinuthia\\Desktop\\practise\\Avalonia-UI\\GetStartedApp\\GetStartedApp\\GetStartedApp.csproj",
       "projectName": "GetStartedApp",
-      "projectPath": "C:\\Users\\Alex Kinuthia\\Desktop\\practise\\GetStartedApp\\GetStartedApp\\GetStartedApp.csproj",
+      "projectPath": "C:\\Users\\Alex Kinuthia\\Desktop\\practise\\Avalonia-UI\\GetStartedApp\\GetStartedApp\\GetStartedApp.csproj",
       "packagesPath": "C:\\Users\\Alex Kinuthia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex Kinuthia\\Desktop\\practise\\GetStartedApp\\GetStartedApp\\obj\\",
+      "outputPath": "C:\\Users\\Alex Kinuthia\\Desktop\\practise\\Avalonia-UI\\GetStartedApp\\GetStartedApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
