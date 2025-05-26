@@ -3,18 +3,36 @@
         xmlns:vm="using:MyApp.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
         x:Class="MyApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="MyApp">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    
+    <StackPanel Margin="10" Spacing="10">
+        <TextBox Name="Name" Text="{Binding Name}" Margin="0, 5"/>
+        <TextBox Name="Email" Text="{Binding Email}" Margin="0, 5"/>
+        
+        <StackPanel Orientation="Horizontal" Margin="0, 5">
+            <Button Content="Add" Command="{Binding AddCommand}" Margin="2"/>
+            <Button Content="Update" Command="{Binding UpdateCommand}" Margin="2"/>
+            <Button Content="Delete" Command="{Binding DeleteCommand}" Margin="2"/>
+        </StackPanel>
+        
+        <ListBox Items="{Binding People}" SelectedItem="{Binding SelectedPerson}" SelectionChanged="PersonSelected" Height="200">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" Width="120"/>
+                        <TextBlock Text="{Binding Email}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
 
 </Window>
