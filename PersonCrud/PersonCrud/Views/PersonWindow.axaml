@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        x:Class="PersonCrud.Views.PersonWindow"
+        Title="Person Manager">
+        
+        <StackPanel Margin="10" Spacing="10">
+                <Border Margin="5" Background="Teal" CornerRadius="10">
+                        <TextBlock Margin="5" FontSize="24" Foreground="AliceBlue" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                People Window
+                        </TextBlock>
+                </Border>
+                
+                <Grid ShowGridLines="False" ColumnSpacing="10" Margin="5" ColumnDefinitions="Auto, Auto, Auto" RowDefinitions="Auto, Auto, Auto">
+                        <Label Grid.Row="0" Grid.Column="0" Margin="10">Name : </Label>
+                        <TextBox Name="Name" Grid.Row="0" Grid.Column="1" Margin="0, 5"/>
+                        <Label Grid.Row="1" Grid.Column="0" Margin="10">Email : </Label>
+                        <TextBox Name="Email" Grid.Row="1" Grid.Column="1" Margin="0, 5"/>
+                        
+                        <Button Name="AddBtn" Click="AddBtn_OnClick" Grid.Row="2" Grid.Column="0" Margin="10" Background="RoyalBlue" Foreground="White" FontWeight="SemiBold">Add</Button>
+                        <Button Name="UpdateBtn" Click="UpdateBtn_OnClick" Grid.Row="2" Grid.Column="1" Margin="10" Background="OrangeRed" Foreground="White" FontWeight="SemiBold">Update</Button>
+                        <Button Name="DeleteBtn" Click="DeleteBtn_OnClick" Grid.Row="2" Grid.Column="2" Margin="10" Background="Red" Foreground="White" FontWeight="SemiBold">Delete</Button>
+                </Grid>
+                
+                <DataGrid Name="PeopleDataGrid" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="DataGrid_OnSelectionChanged">
+                        <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name"/>
+                                <DataGridTextColumn Header="Email"/>
+                        </DataGrid.Columns>
+                </DataGrid>
+                
+        </StackPanel>
+</Window>
