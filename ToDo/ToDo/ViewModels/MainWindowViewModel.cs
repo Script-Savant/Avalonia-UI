@@ -1,6 +1,8 @@
-﻿namespace ToDo.ViewModels;
+﻿using System.Collections.ObjectModel;
+
+namespace ToDo.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting { get; } = "Welcome to Avalonia!";
+    public ObservableCollection<ToDoItemViewModel> ToDoItems { get; } = new();
 }
