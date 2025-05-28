@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        x:Class="CustomersCrud.MainWindow"
+        Title="Customers"
+        Width="600"
+        Height="600">
+    
+    <Grid RowDefinitions="*,*"> 
+
+        <!-- Upper Half: Form -->
+        <StackPanel Grid.Row="0" Margin="10" Spacing="10">
+            <Border Margin="10" CornerRadius="5" Background="Aqua" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Foreground="Black" FontSize="24" Margin="10" FontWeight="Bold">Customers Crud</TextBlock>
+            </Border>
+            
+            <Grid ShowGridLines="False" RowSpacing="10"
+                  ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto, Auto, Auto">
+                
+                <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">First Name :</Label>
+                <TextBox x:Name="FirstNameTxt" Grid.Row="0" Grid.Column="1" Width="250"/>
+                
+                <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Last Name :</Label>
+                <TextBox x:Name="LastNameTxt" Grid.Row="1" Grid.Column="1" Width="250"/>
+                
+                <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Email :</Label>
+                <TextBox x:Name="EmailTxt" Grid.Row="2" Grid.Column="1" Width="250"/>
+            </Grid>
+            
+            <StackPanel Margin="10" Spacing="20" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="SaveBtn" Click="SaveBtn_OnClick" FontWeight="SemiBold" FontSize="16" Foreground="White" Background="RoyalBlue">Save</Button>
+                <Button x:Name="UpdateBtn" Click="UpdateBtn_OnClick" FontWeight="SemiBold" FontSize="16" Foreground="White" Background="OrangeRed">Update</Button>
+                <Button x:Name="DeleteBtn" Click="DeleteBtn_OnClick" FontWeight="SemiBold" FontSize="16" Foreground="White" Background="Red">Delete</Button>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Lower Half: DataGrid -->
+        <DataGrid Grid.Row="1" x:Name="CustomersDataGrid" Margin="10" Foreground="White"
+                  SelectionChanged="CustomersDataGrid_OnSelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name"/>
+                <DataGridTextColumn Header="Last Name"/>
+                <DataGridTextColumn Header="Email" />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Window>
