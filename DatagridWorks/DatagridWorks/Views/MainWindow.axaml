@@ -3,6 +3,7 @@
         xmlns:vm="using:DatagridWorks.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:DatagridWorks.Models"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DatagridWorks.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -14,10 +15,25 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <DataGrid Margin="20" ItemsSource="{Binding People}" AutoGenerateColumns="False" IsReadOnly="True" GridLinesVisibility="All" BorderThickness="1" BorderBrush="Gray">
+    <DataGrid Margin="20" ItemsSource="{Binding People}" AutoGenerateColumns="False" IsReadOnly="False" GridLinesVisibility="All" BorderThickness="1" BorderBrush="Gray">
         <DataGrid.Columns>
             <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"></DataGridTextColumn>
             <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"></DataGridTextColumn>
+            
+            <DataGridTemplateColumn Header="Age">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate DataType="models:Person">
+                        <TextBlock Text="{Binding AgeInYears, StringFormat='{}{0} years'}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+                
+                <DataGridTemplateColumn.CellEditingTemplate>
+                    <DataTemplate DataType="models:Person">
+                        <NumericUpDown Value="{Binding AgeInYears}" FormatString="N0" Minimum="0" Maximum="120" HorizontalAlignment="Stretch"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellEditingTemplate>
+                
+            </DataGridTemplateColumn>
         </DataGrid.Columns>
     </DataGrid>
 

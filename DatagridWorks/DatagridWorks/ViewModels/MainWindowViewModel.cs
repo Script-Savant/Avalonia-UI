@@ -12,9 +12,9 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         var people = new List<Person>
         {
-            new Person("Neil", "Armstrong"),
-            new Person("Jane", "Smith"),
-            new Person("John", "Doe")
+            new Person("Neil", "Armstrong", 55),
+            new Person("Jane", "Smith", 23),
+            new Person("John", "Doe", 25)
         };
 
         People = new ObservableCollection<Person>(people);
