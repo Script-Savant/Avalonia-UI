@@ -14,6 +14,11 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <DataGrid Margin="20" ItemsSource="{Binding People}" AutoGenerateColumns="False" IsReadOnly="True" GridLinesVisibility="All" BorderThickness="1" BorderBrush="Gray">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"></DataGridTextColumn>
+            <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"></DataGridTextColumn>
+        </DataGrid.Columns>
+    </DataGrid>
 
 </Window>
